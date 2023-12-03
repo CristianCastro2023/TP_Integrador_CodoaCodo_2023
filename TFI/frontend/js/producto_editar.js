@@ -8,7 +8,7 @@ createApp({
             id: 0,
             nombre: "",
             imagen: "",
-            stock: 0,
+            tipo: "",  // Nuevo campo "tipo"
             precio: 0,
             url: 'https://anywherefer.pythonanywhere.com/productos' + id,
         }
@@ -34,7 +34,7 @@ createApp({
             let producto = {
                 nombre: this.nombre,
                 precio: this.precio,
-                stock: this.stock,
+                tipo: this.tipo,  // Cambio de "stock" a "tipo"
                 imagen: this.imagen
             }
             var options = {

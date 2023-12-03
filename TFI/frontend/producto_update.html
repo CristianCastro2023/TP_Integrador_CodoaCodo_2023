@@ -32,8 +32,12 @@
                         <input type="number" name="precio" id="precio" v-model="precio">
                     </div>
                     <div class="mb-3">
-                        <label for="stock">Stock</label>
-                        <input type="number" name="stock" id="stock" v-model="stock">
+                        <label for="tipo">Tipo</label>
+                        <select name="tipo" id="tipo" v-model="tipo">
+                            <option value="ofertas">Ofertas</option>
+                            <option value="descuentos">Descuentos</option>
+                            <option value="combos">Combos</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="imagen">Imagen</label>
