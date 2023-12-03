@@ -10,7 +10,7 @@ createApp({
             imagen: "",
             stock: 0,
             precio: 0,
-            url: 'http://mcerda.pythonanywhere.com/productos/' + id,
+            url: 'https://anywherefer.pythonanywhere.com/productos' + id,
         }
     },
     methods: {
