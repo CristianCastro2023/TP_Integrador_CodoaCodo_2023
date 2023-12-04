@@ -38,7 +38,7 @@ createApp({
             let producto = {
                 nombre: this.nombre,
                 precio: this.precio,
-                tipo: this.tipo,  // Cambio de "stock" a "tipo"
+                tipo: this.tipo || null,
                 imagen: this.imagen,
             }
             var options = {
