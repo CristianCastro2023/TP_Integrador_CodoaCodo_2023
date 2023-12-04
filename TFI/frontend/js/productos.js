@@ -5,14 +5,14 @@ createApp({
             productos: [],
             //url:'http://localhost:5000/productos',
             // si el backend esta corriendo local usar localhost 5000(si no lo subieron a pythonanywhere)
-            url: 'https://anywherefer.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
+            url: 'https://anywherefer.pythonanywhere.com/productos/1', // si ya lo subieron a pythonanywhere
             error: false,
             cargando: true,
             /*atributos para el guardar los valores del formulario */
             id: 0,
             nombre: "",
             imagen: "",
-            stock: 0,
+            tipo: "",  // Nuevo campo "tipo"
             precio: 0,
         }
     },
@@ -44,8 +44,8 @@ createApp({
             let producto = {
                 nombre: this.nombre,
                 precio: this.precio,
-                stock: this.stock,
-                imagen: this.imagen
+                tipo: this.tipo,
+                imagen: this.imagen,
             }
             var options = {
                 body: JSON.stringify(producto),

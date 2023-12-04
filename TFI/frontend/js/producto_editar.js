@@ -10,7 +10,7 @@ createApp({
             imagen: "",
             tipo: "",  // Nuevo campo "tipo"
             precio: 0,
-            url: 'https://anywherefer.pythonanywhere.com/productos' + id,
+            url: 'https://anywherefer.pythonanywhere.com/productos/1' + id,
         }
     },
     methods: {
@@ -22,7 +22,7 @@ createApp({
                     this.id = data.id
                     this.nombre = data.nombre;
                     this.imagen = data.imagen
-                    this.stock = data.stock
+                    this.tipo = data.tipo
                     this.precio = data.precio
                 })
                 .catch(err => {
@@ -35,7 +35,7 @@ createApp({
                 nombre: this.nombre,
                 precio: this.precio,
                 tipo: this.tipo,  // Cambio de "stock" a "tipo"
-                imagen: this.imagen
+                imagen: this.imagen,
             }
             var options = {
                 body: JSON.stringify(producto),
