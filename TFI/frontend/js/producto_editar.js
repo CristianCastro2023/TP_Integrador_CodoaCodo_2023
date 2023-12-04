@@ -31,6 +31,10 @@ createApp({
                 })
         },
         modificar() {
+            // Verificar si tipo es una cadena vacía o contiene solo espacios en blanco
+            if (this.tipo.trim() === "") {
+                this.tipo = null;
+            }
             let producto = {
                 nombre: this.nombre,
                 precio: this.precio,
@@ -43,18 +47,22 @@ createApp({
                 headers: { 'Content-Type': 'application/json' },
                 redirect: 'follow'
             }
+
             fetch(this.url, options)
-                .then(function () {
-                    alert("Registro modificado")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Error al modificar el registro");
+                    }
+                    alert("Registro modificado");
                     window.location.href = "./productos.html";
                 })
                 .catch(err => {
                     console.error(err);
-                    alert("Error al Modificar")
-                })
+                    alert(err.message || "Error desconocido al modificar el registro");
+                });
         }
     },
     created() {
         this.fetchData(this.url)
     },
-}).mount('#app')
+}).mount('#app');
